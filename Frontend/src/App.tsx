@@ -2,12 +2,13 @@ import Header from "./components/header/header";
 import Discover from "./components/discover/discover";
 import MultiLayerParallax from "./components/multiLayerParallax/multiLayerParallax";
 import { useRef } from "react";
-import { useScroll, useTransform } from "framer-motion";
+import { useInView, useScroll, useTransform } from "framer-motion";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 function App() {
   const ref = useRef(null);
   const [headerTextColor, setHeaderTextColor] = useState("primary");
+  const isInView = useInView(ref);
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -18,6 +19,9 @@ function App() {
     primary: { color: "#083649" },
     white: { color: "#fff" },
   };
+  useEffect(() => {
+    console.log(isInView);
+  }, [isInView]);
   return (
     <>
       <motion.div
@@ -28,12 +32,8 @@ function App() {
       >
         <Header color={headerTextColor} />
       </motion.div>
-      <motion.div
-        onViewportLeave={() => setHeaderTextColor("white")}
-        onViewportEnter={() => setHeaderTextColor("primary")}
-        ref={ref}
-        className="w-full h-screen p-10 relative"
-      >
+      <motion.div ref={ref} className="w-full h-screen p-10 relative">
+        <MultiLayerParallax refP={ref} />
         <div className=" h-full flex flex-col z-1">
           <motion.main
             style={{ y: textY }}
@@ -52,9 +52,12 @@ function App() {
             </button>
           </motion.main>
         </div>
-        <MultiLayerParallax refP={ref} />
       </motion.div>
       <Discover />
+      <motion.div
+        onViewportEnter={() => setHeaderTextColor("white")}
+        onViewportLeave={() => setHeaderTextColor("primary")}
+      ></motion.div>
     </>
   );
 }
