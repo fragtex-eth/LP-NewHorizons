@@ -42,7 +42,9 @@ export default function Discover() {
               alt={experience.title}
             />
             <h3 className="font-bold text-3xl">{experience.title}</h3>
-            <p className="w-2/3 text-2xl">{experience.description}</p>
+            <p className="w-2/3 text-2xl opacity-50">
+              {experience.description}
+            </p>
           </div>
         ))}
       </div>
