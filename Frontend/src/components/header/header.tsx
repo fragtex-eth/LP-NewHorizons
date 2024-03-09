@@ -8,11 +8,13 @@ export default function Header() {
         <img className="w-24" src={Logo} />
         <span className="text-tertiary uppercase text-5xl">Horizon</span>
       </div>
-      <nav className="flex gap-16 text-4xl text-secondary">
+      <nav className="flex items-center gap-16 text-4xl text-secondary">
         <a>Home</a>
         <a>About Us</a>
         <a>Experience</a>
-        <button>Book A Session</button>
+        <button className="border border-secondary border-2 py-3 px-6 rounded-full">
+          Book A Session
+        </button>
       </nav>
     </header>
   );
