@@ -22,8 +22,8 @@ export default function Discover() {
   ];
 
   return (
-    <section className="h-screen w-full bg-secondary text-inverted flex flex-col justify-center gap-20 text-center ">
-      <h2 className="text-8xl gap-8 uppercase flex flex-col w-2/3 mx-auto">
+    <section className="h-screen w-full bg-secondary text-inverted flex flex-col justify-center relative z-40 gap-20 text-center ">
+      <h2 className="text-8xl gap-8 uppercase flex flex-col w-2/3 mx-auto mt-32">
         Discover our experience
         <span className=" text-3xl">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
