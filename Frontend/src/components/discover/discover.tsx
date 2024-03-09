@@ -32,14 +32,17 @@ export default function Discover() {
       </h2>
       <div className="flex justify-evenly">
         {experiences.map((experience) => (
-          <div className="flex flex-col items-center gap-4">
+          <div
+            className="flex flex-col items-center gap-4"
+            key={experience.title}
+          >
             <img
               className="max-w-[30rem] w-full"
               src={experience.image}
               alt={experience.title}
             />
-            <h3>{experience.title}</h3>
-            <p className="w-2/3">{experience.description}</p>
+            <h3 className="font-bold text-3xl">{experience.title}</h3>
+            <p className="w-2/3 text-2xl">{experience.description}</p>
           </div>
         ))}
       </div>
