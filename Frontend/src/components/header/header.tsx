@@ -1,4 +1,3 @@
-import React from "react";
 import { LogoIcon } from "../common/Logo.tsx";
 
 export default function Header() {

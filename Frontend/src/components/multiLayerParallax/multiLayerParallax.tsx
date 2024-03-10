@@ -1,8 +1,10 @@
-import React, { useRef } from "react";
-import FullBackground from "../../assets/FullBackground.png";
-import BottomBackground from "../../assets/ForestAnimals.png";
 import { motion, useScroll, useTransform } from "framer-motion";
-export default function MultiLayerParallax({ refP }) {
+import { RefObject } from "react";
+
+type MultiLayerParallaxProps = {
+  refP: RefObject<HTMLDivElement>;
+};
+export default function MultiLayerParallax({ refP }: MultiLayerParallaxProps) {
   const { scrollYProgress } = useScroll({
     target: refP,
     offset: ["start start", "end start"],
