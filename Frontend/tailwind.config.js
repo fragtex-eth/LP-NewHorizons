@@ -8,6 +8,27 @@ export default {
       tertiary: "#063347",
       inverted: "#fff",
     },
+    fontFamily: {
+      primary: [
+        "Passion One",
+        "Inter",
+        "system-ui",
+        "Avenir",
+        "Helvetica",
+        "Arial",
+        "sans-serif",
+      ],
+
+      secondary: [
+        "Poppins",
+        "Inter",
+        "system-ui",
+        "Avenir",
+        "Helvetica",
+        "Arial",
+        "sans-serif",
+      ],
+    },
     extend: {},
   },
   plugins: [],

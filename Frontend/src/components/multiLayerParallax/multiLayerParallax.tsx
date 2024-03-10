@@ -38,7 +38,7 @@ export default function MultiLayerParallax({ refP }) {
         }}
       />
       <motion.div
-        className="overflow-hidden  absolute inset-0 z-10 bg-bottom bg-cover"
+        className="pointer-events-none overflow-hidden  absolute inset-0 z-10 bg-bottom bg-cover"
         style={{
           backgroundImage: `url(/images/ForestAnimals.png)`,
           scale: backgroundSize,
